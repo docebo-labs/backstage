@@ -224,7 +224,7 @@ export class GitlabDiscoveryEntityProvider implements EntityProvider {
       this.config.fallbackBranch;
     return {
       type: 'url',
-      target: `${project.web_url}/-/blob/${project_branch}/${this.config.catalogFile}`,
+      target: `${project.web_url}/-/blob/${encodeURIComponent(project_branch)}/${this.config.catalogFile}`,
       presence: 'optional',
     };
   }
